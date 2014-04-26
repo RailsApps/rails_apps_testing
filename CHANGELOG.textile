@@ -1,5 +1,9 @@
 h1. CHANGELOG
 
+h3. 0.2.1 April 26, 2014
+
+* tiny fix (missing newline in a file)
+
 h3. 0.2.0 April 26, 2014
 
 * add option to install support for Devise
