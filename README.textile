@@ -172,6 +172,14 @@ RSpec.configure do |config|
 end
 </pre>
 
+If you want to install the file *spec/support/devise.rb* independently of the other changes, you can run:
+
+<pre>
+$ rails generate testing:configure devise
+</pre>
+
+This is helpful for application templates that install RSpec before installing Devise, allowing you to run the generator again to install support for Devise after Devise is installed.
+
 h2. Issues
 
 Any issues? Please create an "issue":http://github.com/RailsApps/rails_apps_testing/issues on GitHub. Reporting issues (and patching!) helps everyone.

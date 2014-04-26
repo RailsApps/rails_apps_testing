@@ -1,5 +1,9 @@
 h1. CHANGELOG
 
+h3. 0.2.0 April 26, 2014
+
+* add option to install support for Devise
+
 h3. 0.1.0 April 26, 2014
 
 * set up RSpec and friends in a Rails application

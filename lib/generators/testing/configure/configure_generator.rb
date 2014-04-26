@@ -26,6 +26,8 @@ module Testing
             if File.exists?('config/initializers/devise.rb')
               copy_file 'devise.rb', 'spec/support/devise.rb'
             end
+          when 'devise'
+            copy_file 'devise.rb', 'spec/support/devise.rb'
         end
       end
 
