@@ -1,0 +1,183 @@
+h1. !http://railsapps.github.io/images/rails-36x36.jpg(RailsAppsTesting Gem)! RailsAppsTesting Gem
+
+Use this gem to set up a testing framework. The gem modifies a Rails application and configures:
+
+* "RSpec Rails":https://github.com/rspec/rspec-rails – installs RSpec gems with support for Rails
+* "Capybara":https://github.com/jnicklas/capybara – tests web pages
+* "Database Cleaner":https://github.com/bmabey/database_cleaner – a clean slate for databases
+* "FactoryGirl Rails":https://github.com/thoughtbot/factory_girl_rails – creates test data
+* "Launchy":https://github.com/copiousfreetime/launchy – view errors in your web browser
+* "Selenium Webdriver":http://docs.seleniumhq.org/projects/webdriver/ – for tests that require JavaScript
+
+This suite of gems is popular for testing Rails applications. Typically, a developer makes several small configuration changes when setting up a test framework with these gems. The configuration changes are easy to make manually, but this gem provides a generator to make the changes, for ease of use with an automated process such as an application template.
+
+RailsAppsTesting is a utility gem to use during development. You can remove it after setting up your test framework. It was originally written for use by the "Rails Composer":http://railsapps.github.io/rails-composer/ tool. Use Rails Composer to build any of the "RailApps example applications":http://railsapps.github.io/ for use as starter apps.
+
+h4. !http://railsapps.github.io/images/join/join-railsapps.png(Join RailsApps)!:http://railsapps.github.io/
+
+h4. Support the RailsApps Project
+
+If the RailsAppsTesting gem is useful to you, please accept our invitation to "join the RailsApps project":http://railsapps.github.io/. The RailsApps project provides example applications, tutorials, and starter tools, including the RailsAppsTesting gem.
+
+h2. Install a Testing Framework
+
+The RailsApps project offers a tutorial:
+
+* "RSpec Tutorial":http://railsapps.github.io/rspec.html
+
+To install a testing framework, add the gems you need. Then use the RailsAppsTesting gem. It will set up and configure your testing framework.
+
+Add the gems you need to your Rails application Gemfile:
+
+<pre>
+group :development do
+  gem 'rails_apps_testing'
+end
+group :development, :test do
+  gem 'rspec-rails', '>= 3.0.0.beta2'
+  gem 'factory_girl_rails'
+end
+group :test do
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'launchy'
+  gem 'selenium-webdriver'
+end
+</pre>
+
+You don't need the RailsAppsTesting gem deployed to production, so put it in the @development@ group.
+
+If you want to use a newer unreleased version from GitHub:
+
+<pre>
+group :development do
+  gem 'rails_apps_testing', github: 'RailsApps/rails_apps_testing'
+end
+</pre>
+
+h4. Use Bundler
+
+Use Bundler to install the gems:
+
+<pre>
+$ bundle install
+</pre>
+
+h2. Configure RSpec and Friends
+
+To run the generator and configure the testing framework:
+
+<pre>
+$ rails generate testing:configure rspec
+</pre>
+
+Use @--force@ if you want to overwrite existing files:
+
+<pre>
+$ rails generate testing:configure rspec --force
+</pre>
+
+h3. RSpec Configuration
+
+The generator will configure RSpec.
+
+It will modify the file *.rspec* to add:
+
+<pre>
+--format documentation
+</pre>
+
+It will modify the file *config/application.rb* to suppress creation of stub files that many developers don't use:
+
+<pre>
+config.generators do |g|
+  g.test_framework :rspec,
+    fixtures: true,
+    view_specs: false,
+    helper_specs: false,
+    routing_specs: false,
+    controller_specs: false,
+    request_specs: false
+  g.fixture_replacement :factory_girl, dir: "spec/factories"
+end
+</pre>
+
+h3. Capybara and Launchy Configuration
+
+The generator will set up Capybara and Launchy to display CSS and JavaScript with a file *spec/support/capybara.rb*:
+
+<pre>
+Capybara.asset_host = 'http://localhost:3000'
+</pre>
+
+h3. Database Cleaner Configuration
+
+The generator will set up Database Cleaner to test JavaScript with a file *spec/support/database_cleaner.rb*:
+
+<pre>
+RSpec.configure do |config|
+  config.before(:suite) do
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.before(:each) do
+    DatabaseCleaner.strategy = :transaction
+  end
+
+  config.before(:each, :js => true) do
+    DatabaseCleaner.strategy = :truncation
+  end
+
+  config.before(:each) do
+    DatabaseCleaner.start
+  end
+
+  config.append_after(:each) do
+    DatabaseCleaner.clean
+  end
+end
+</pre>
+
+It will also modify *spec/spec_helper.rb*:
+
+<pre>
+config.use_transactional_fixtures = false
+</pre>
+
+h3. FactoryGirl Configuration
+
+The generator will set up FactoryGirl shortcuts with a file *spec/support/factory_girl.rb*:
+
+<pre>
+RSpec.configure do |config|
+  config.include FactoryGirl::Syntax::Methods
+end
+</pre>
+
+h3. Devise Configuration
+
+If Devise in installed in your application, the generator will add a file *spec/support/devise.rb*:
+
+<pre>
+RSpec.configure do |config|
+  config.include Devise::TestHelpers, :type => :controller
+end
+</pre>
+
+h2. Issues
+
+Any issues? Please create an "issue":http://github.com/RailsApps/rails_apps_testing/issues on GitHub. Reporting issues (and patching!) helps everyone.
+
+h2. Credits
+
+Daniel Kehoe maintains this gem as part of the "RailsApps project":http://railsapps.github.io/.
+
+Please see the "CHANGELOG":https://github.com/RailsApps/rails_apps_testing/blob/master/CHANGELOG.textile for a list of contributors.
+
+Is the gem useful to you? Follow the project on Twitter: "@rails_apps":http://twitter.com/rails_apps. I'd love to know you were helped out by the gem.
+
+h2. MIT License
+
+"MIT License":http://www.opensource.org/licenses/mit-license
+
+Copyright © 2014 Daniel Kehoe

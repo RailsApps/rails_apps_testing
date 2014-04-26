@@ -1,0 +1,5 @@
+h1. CHANGELOG
+
+h3. 0.1.0 April 26, 2014
+
+* set up RSpec and friends in a Rails application
