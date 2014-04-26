@@ -79,7 +79,15 @@ $ rails generate testing:configure rspec --force
 
 h3. RSpec Configuration
 
-The generator will configure RSpec.
+The RailsAppsTesting generator will remove the legacy *test/* folder if it exists (it is not needed for RSpec).
+
+The RailsAppsTesting generator will run @rails generate rspec:install@ to create two files and a folder:
+
+* *.rspec*
+* *spec/*
+* *spec/spec_helper.rb*
+
+Then the RailsAppsTesting generator will configure RSpec.
 
 It will modify the file *.rspec* to add:
 
