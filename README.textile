@@ -13,6 +13,8 @@ This suite of gems is popular for testing Rails applications. Typically, a devel
 
 RailsAppsTesting is a utility gem to use during development. You can remove it after setting up your test framework. It was originally written for use by the "Rails Composer":http://railsapps.github.io/rails-composer/ tool. Use Rails Composer to build any of the "RailApps example applications":http://railsapps.github.io/ for use as starter apps.
 
+If you like the RailsAppsTesting gem, you might be interested in the "RailsLayout gem":https://github.com/RailsApps/rails_layout which generates Rails application layout files for various front-end frameworks such as Bootstrap and Foundation.
+
 h4. !http://railsapps.github.io/images/join/join-railsapps.png(Join RailsApps)!:http://railsapps.github.io/
 
 h4. Support the RailsApps Project
