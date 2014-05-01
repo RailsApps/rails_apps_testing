@@ -1,5 +1,13 @@
 h1. !http://railsapps.github.io/images/rails-36x36.jpg(RailsApps Testing Gem)! RailsApps Testing Gem
 
+See a blog post about "Why I wrote this gem":http://blog.railsapps.org/post/84339605200/railsapps-testing-gem. I primarily use RSpec and Capybara for testing, but in principle, the gem could also set up Test::Unit or Cucumber frameworks. Also, you may want other configurations for RSpec, so let me know and we can extend the gem.
+
+If you're new to testing, I've written a tutorial on Rails testing with RSPec:
+
+* "RSpec Tutorial":http://railsapps.github.io/rspec.html
+
+h2. About
+
 Use this gem to set up a testing framework. The gem modifies a Rails application and configures:
 
 * "RSpec Rails":https://github.com/rspec/rspec-rails – installs RSpec gems with support for Rails
@@ -23,7 +31,7 @@ If the RailsApps Testing gem is useful to you, please accept our invitation to "
 
 h2. Install a Testing Framework
 
-The RailsApps project offers a tutorial:
+The RailsApps project offers a tutorial on Rails testing with RSPec:
 
 * "RSpec Tutorial":http://railsapps.github.io/rspec.html
 
