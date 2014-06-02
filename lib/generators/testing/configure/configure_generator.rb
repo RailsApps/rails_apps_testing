@@ -16,7 +16,7 @@ module Testing
             run 'rm -rf test/' # Removing test folder (not needed for RSpec)
             generate 'rspec:install'
             inject_into_file '.rspec', "--format documentation\n", :after => "--color\n"
-            gsub_file '.rspec', /--warnings/, ''
+            gsub_file '.rspec', /--warnings\n/, ''
             tweaks = File.read(find_in_source_paths('application.rb'))
             inject_into_file 'config/application.rb', tweaks + "\n", :after => "Rails::Application\n"
             copy_file 'capybara.rb', 'spec/support/capybara.rb'

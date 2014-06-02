@@ -1,5 +1,9 @@
 h1. CHANGELOG
 
+h3. 0.2.3 June 2, 2014
+
+* eliminate a blank line in the .rspec file
+
 h3. 0.2.2 June 2, 2014
 
 * update for RSpec 3.0
