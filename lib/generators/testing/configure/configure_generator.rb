@@ -16,11 +16,11 @@ module Testing
             run 'rm -rf test/' # Removing test folder (not needed for RSpec)
             generate 'rspec:install'
             inject_into_file '.rspec', "--format documentation\n", :after => "--color\n"
+            gsub_file '.rspec', /--warnings/, ''
             tweaks = File.read(find_in_source_paths('application.rb'))
             inject_into_file 'config/application.rb', tweaks + "\n", :after => "Rails::Application\n"
-            gsub_file 'spec/spec_helper.rb', /check_pending/, 'maintain_test_schema'
             copy_file 'capybara.rb', 'spec/support/capybara.rb'
-            gsub_file 'spec/spec_helper.rb', /config.use_transactional_fixtures = true/, "config.use_transactional_fixtures = false"
+            gsub_file 'spec/rails_helper.rb', /config.use_transactional_fixtures = true/, "config.use_transactional_fixtures = false"
             copy_file 'database_cleaner.rb', 'spec/support/database_cleaner.rb'
             copy_file 'factory_girl.rb', 'spec/support/factory_girl.rb'
             if File.exists?('config/initializers/devise.rb')

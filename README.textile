@@ -95,7 +95,7 @@ The RailsApps Testing generator will run @rails generate rspec:install@ to creat
 
 * *.rspec*
 * *spec/*
-* *spec/spec_helper.rb*
+* *spec/rails_helper.rb*
 
 Then the RailsApps Testing generator will configure RSpec.
 
@@ -103,6 +103,12 @@ It will modify the file *.rspec* to add:
 
 <pre>
 --format documentation
+</pre>
+
+and will remove:
+
+<pre>
+--warnings
 </pre>
 
 It will modify the file *config/application.rb* to suppress creation of stub files that many developers don't use:
@@ -156,7 +162,7 @@ RSpec.configure do |config|
 end
 </pre>
 
-It will also modify *spec/spec_helper.rb*:
+It will also modify *spec/rails_helper.rb*:
 
 <pre>
 config.use_transactional_fixtures = false
