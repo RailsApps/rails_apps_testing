@@ -1,5 +1,9 @@
 h1. CHANGELOG
 
+h3. 0.2.2 June 2, 2014
+
+* update for RSpec 3.0
+
 h3. 0.2.1 April 26, 2014
 
 * tiny fix (missing newline in a file)
