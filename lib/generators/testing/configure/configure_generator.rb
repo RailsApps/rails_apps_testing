@@ -16,6 +16,7 @@ module Testing
             run 'rm -rf test/' # Removing test folder (not needed for RSpec)
             generate 'rspec:install'
             inject_into_file '.rspec', "--format documentation\n", :after => "--color\n"
+            inject_into_file '.rspec', "--require rails_helper\n", :after => "--require spec_helper\n"
             gsub_file '.rspec', /--warnings\n/, ''
             tweaks = File.read(find_in_source_paths('application.rb'))
             inject_into_file 'config/application.rb', tweaks + "\n", :after => "Rails::Application\n"
