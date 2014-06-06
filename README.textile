@@ -19,6 +19,8 @@ Use this gem to set up a testing framework. The gem modifies a Rails application
 
 This suite of gems is popular for testing Rails applications. Typically, a developer makes several small configuration changes when setting up a test framework with these gems. The configuration changes are easy to make manually, but this gem provides a generator to make the changes, for ease of use with an automated process such as an application template.
 
+The gem also offers options to install test suites for Devise or OmniAuth.
+
 RailsApps Testing is a utility gem to use during development. You can remove it after setting up your test framework. It was originally written for use by the "Rails Composer":http://railsapps.github.io/rails-composer/ tool. Use Rails Composer to build any of the "RailApps example applications":http://railsapps.github.io/ for use as starter apps.
 
 If you like the RailsApps Testing gem, you might be interested in the "RailsLayout gem":https://github.com/RailsApps/rails_layout which generates Rails application layout files for various front-end frameworks such as Bootstrap and Foundation.
@@ -91,10 +93,11 @@ h3. RSpec Configuration
 
 The RailsApps Testing generator will remove the legacy *test/* folder if it exists (it is not needed for RSpec).
 
-The RailsApps Testing generator will run @rails generate rspec:install@ to create two files and a folder:
+The RailsApps Testing generator will run @rails generate rspec:install@ to create three files and a folder:
 
 * *.rspec*
 * *spec/*
+* *spec/spec_helper.rb*
 * *spec/rails_helper.rb*
 
 Then the RailsApps Testing generator will configure RSpec.
@@ -103,6 +106,7 @@ It will modify the file *.rspec* to add:
 
 <pre>
 --format documentation
+--require rails_helper
 </pre>
 
 and will remove:
@@ -110,6 +114,8 @@ and will remove:
 <pre>
 --warnings
 </pre>
+
+Prior to RSpec 3.0, every RSpec test file had to include @require 'spec_helper'@. With RSpec 3.0 and later versions, an additional @require 'rails_helper'@ became necessary. Fortunately, starting with RSpec 3.0, to eliminate clutter and duplication, these requirements can be specified in the project setting *.rspec* file.
 
 It will modify the file *config/application.rb* to suppress creation of stub files that many developers don't use:
 
@@ -178,23 +184,21 @@ RSpec.configure do |config|
 end
 </pre>
 
-h3. Devise Configuration
+h3. Install Devise Tests
 
-If Devise in installed in your application, the generator will add a file *spec/support/devise.rb*:
-
-<pre>
-RSpec.configure do |config|
-  config.include Devise::TestHelpers, :type => :controller
-end
-</pre>
-
-If you want to install the file *spec/support/devise.rb* independently of the other changes, you can run:
+If you want to install tests for Devise, you can run:
 
 <pre>
 $ rails generate testing:configure devise
 </pre>
 
-This is helpful for application templates that install RSpec before installing Devise, allowing you to run the generator again to install support for Devise after Devise is installed.
+h3. Install OmniAuth Tests
+
+If you want to install tests for OmniAuth, you can run:
+
+<pre>
+$ rails generate testing:configure omniauth
+</pre>
 
 h2. Issues
 
