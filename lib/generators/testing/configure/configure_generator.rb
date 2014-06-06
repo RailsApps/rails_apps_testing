@@ -34,6 +34,12 @@ module Testing
             copy_file 'spec/devise/features/users/user_delete_spec.rb', 'spec/features/users/user_delete_spec.rb'
             copy_file 'spec/devise/features/users/user_edit_spec.rb', 'spec/features/users/user_edit_spec.rb'
             copy_file 'spec/devise/features/visitors/sign_up_spec.rb', 'spec/features/visitors/sign_up_spec.rb'
+          when 'omniauth'
+            copy_file 'spec/omniauth/support/helpers/omniauth.rb', 'spec/support/helpers/omniauth.rb'
+            copy_file 'spec/omniauth/support/helpers.rb', 'spec/support/helpers.rb'
+            copy_file 'spec/omniauth/features/users/sign_in_spec.rb', 'spec/features/users/sign_in_spec.rb'
+            copy_file 'spec/omniauth/features/users/sign_out_spec.rb', 'spec/features/users/sign_out_spec.rb'
+            copy_file 'spec/omniauth/controllers/sessions_controller_spec.rb', 'spec/controllers/sessions_controller_spec.rb'
         end
       end
 

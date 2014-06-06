@@ -2,6 +2,7 @@ h1. CHANGELOG
 
 h3. 0.3.0 unreleased
 
+* add a suite of tests for OmniAuth
 * add a suite of tests for Devise
 
 h3. 0.2.4 June 4, 2014
