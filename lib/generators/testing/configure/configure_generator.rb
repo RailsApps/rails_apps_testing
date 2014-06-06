@@ -24,11 +24,16 @@ module Testing
             gsub_file 'spec/rails_helper.rb', /config.use_transactional_fixtures = true/, "config.use_transactional_fixtures = false"
             copy_file 'database_cleaner.rb', 'spec/support/database_cleaner.rb'
             copy_file 'factory_girl.rb', 'spec/support/factory_girl.rb'
-            if File.exists?('config/initializers/devise.rb')
-              copy_file 'devise.rb', 'spec/support/devise.rb'
-            end
           when 'devise'
-            copy_file 'devise.rb', 'spec/support/devise.rb'
+            copy_file 'spec/devise/support/devise.rb', 'spec/support/devise.rb'
+            copy_file 'spec/devise/support/helpers/session_helpers.rb', 'spec/support/helpers/session_helpers.rb'
+            copy_file 'spec/devise/support/helpers.rb', 'spec/support/helpers.rb'
+            copy_file 'spec/devise/factories/users.rb', 'spec/factories/users.rb'
+            copy_file 'spec/devise/features/users/sign_in_spec.rb', 'spec/features/users/sign_in_spec.rb'
+            copy_file 'spec/devise/features/users/sign_out_spec.rb', 'spec/features/users/sign_out_spec.rb'
+            copy_file 'spec/devise/features/users/user_delete_spec.rb', 'spec/features/users/user_delete_spec.rb'
+            copy_file 'spec/devise/features/users/user_edit_spec.rb', 'spec/features/users/user_edit_spec.rb'
+            copy_file 'spec/devise/features/visitors/sign_up_spec.rb', 'spec/features/visitors/sign_up_spec.rb'
         end
       end
 
