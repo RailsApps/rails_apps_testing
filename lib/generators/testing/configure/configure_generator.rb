@@ -43,6 +43,8 @@ module Testing
             copy_file 'spec/omniauth/features/users/sign_in_spec.rb', 'spec/features/users/sign_in_spec.rb'
             copy_file 'spec/omniauth/features/users/sign_out_spec.rb', 'spec/features/users/sign_out_spec.rb'
             copy_file 'spec/omniauth/controllers/sessions_controller_spec.rb', 'spec/controllers/sessions_controller_spec.rb'
+            copy_file 'spec/omniauth/factories/users.rb', 'spec/factories/users.rb'
+            copy_file 'spec/omniauth/models/user_spec.rb', 'spec/models/user_spec.rb'
         end
       end
 
