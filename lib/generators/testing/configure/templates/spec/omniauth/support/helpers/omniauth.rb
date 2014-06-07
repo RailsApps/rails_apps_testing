@@ -21,8 +21,8 @@ module Omniauth
     def signin
       visit root_path
       page.should have_content("Sign in")
-      click_link "Sign in"
       auth_mock
+      click_link "Sign in"
       fill_in 'user_email', with: 'test@example.com'
       click_button "Sign in"
     end
