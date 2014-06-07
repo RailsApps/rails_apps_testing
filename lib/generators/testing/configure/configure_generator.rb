@@ -29,6 +29,7 @@ module Testing
             copy_file 'spec/devise/support/helpers/session_helpers.rb', 'spec/support/helpers/session_helpers.rb'
             copy_file 'spec/devise/support/helpers.rb', 'spec/support/helpers.rb'
             copy_file 'spec/devise/factories/users.rb', 'spec/factories/users.rb'
+            copy_file 'spec/devise/models/user_spec.rb', 'spec/models/user_spec.rb'
             copy_file 'spec/devise/features/users/sign_in_spec.rb', 'spec/features/users/sign_in_spec.rb'
             copy_file 'spec/devise/features/users/sign_out_spec.rb', 'spec/features/users/sign_out_spec.rb'
             copy_file 'spec/devise/features/users/user_delete_spec.rb', 'spec/features/users/user_delete_spec.rb'
