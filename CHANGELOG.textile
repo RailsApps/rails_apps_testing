@@ -1,5 +1,9 @@
 h1. CHANGELOG
 
+h3. 0.3.1 June 6, 2014
+
+* add a User model test for Devise
+
 h3. 0.3.0 June 6, 2014
 
 * add a suite of tests for OmniAuth
