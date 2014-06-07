@@ -1,6 +1,6 @@
 h1. CHANGELOG
 
-h3. 0.3.3 unreleased
+h3. 0.3.3 June 7, 2014
 
 * eliminate deprecated 'should' syntax for OmniAuth tests
 
