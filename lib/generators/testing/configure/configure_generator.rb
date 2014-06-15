@@ -45,6 +45,11 @@ module Testing
             copy_file 'spec/omniauth/controllers/sessions_controller_spec.rb', 'spec/controllers/sessions_controller_spec.rb'
             copy_file 'spec/omniauth/factories/users.rb', 'spec/factories/users.rb'
             copy_file 'spec/omniauth/models/user_spec.rb', 'spec/models/user_spec.rb'
+          when 'pundit'
+            copy_file 'spec/pundit/factories/users.rb', 'spec/factories/users.rb'
+            copy_file 'spec/pundit/features/users/user_index_spec.rb', 'spec/features/users/user_index_spec.rb'
+            copy_file 'spec/pundit/policies/user_policy_spec.rb', 'spec/policies/user_policy_spec.rb'
+            copy_file 'spec/pundit/support/pundit.rb', 'spec/support/pundit.rb'
         end
       end
 

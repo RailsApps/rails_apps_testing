@@ -1,5 +1,9 @@
 h1. CHANGELOG
 
+h3. 0.3.4 June 14, 2014
+
+* add a suite of tests for Pundit
+
 h3. 0.3.3 June 7, 2014
 
 * eliminate deprecated 'should' syntax for OmniAuth tests
