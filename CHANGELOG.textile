@@ -1,5 +1,9 @@
 h1. CHANGELOG
 
+h3. 0.3.5 June 26, 2014
+
+* remove 'capture email' feature from 'rails-omniauth' example application
+
 h3. 0.3.4 June 14, 2014
 
 * add a suite of tests for Pundit
