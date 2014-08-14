@@ -1,5 +1,9 @@
 h1. CHANGELOG
 
+h3. 0.3.7 August 14, 2014
+
+* update for Devise 3.3 changed error messages
+
 h3. 0.3.6 July 7, 2014
 
 * accommodate undefined file load order on Linux for Devise session helpers
