@@ -1,5 +1,9 @@
 h1. CHANGELOG
 
+h3. 0.3.8 August 14, 2014
+
+* remove superfluous line from OmniAuth test
+
 h3. 0.3.7 August 14, 2014
 
 * update for Devise 3.3 changed error messages
