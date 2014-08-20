@@ -1,5 +1,9 @@
 h1. CHANGELOG
 
+h3. 0.3.9 August 20, 2014
+
+* match against error messages in the Devise locale file
+
 h3. 0.3.8 August 14, 2014
 
 * remove superfluous line from OmniAuth test
