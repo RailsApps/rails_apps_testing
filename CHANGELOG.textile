@@ -1,5 +1,9 @@
 h1. CHANGELOG
 
+h3. 0.3.11 unreleased
+
+* accommodate RSpec 3.1 change to rails_helper.rb file (https://github.com/rspec/rspec-rails/issues/1106)
+
 h3. 0.3.10 August 20, 2014
 
 * fix match against error messages in the Devise locale file

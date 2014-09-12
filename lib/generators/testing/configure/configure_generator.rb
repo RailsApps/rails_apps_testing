@@ -22,6 +22,7 @@ module Testing
             inject_into_file 'config/application.rb', tweaks + "\n", :after => "Rails::Application\n"
             copy_file 'capybara.rb', 'spec/support/capybara.rb'
             gsub_file 'spec/rails_helper.rb', /config.use_transactional_fixtures = true/, "config.use_transactional_fixtures = false"
+            gsub_file 'spec/rails_helper.rb', /# Dir/, "Dir"
             copy_file 'database_cleaner.rb', 'spec/support/database_cleaner.rb'
             copy_file 'factory_girl.rb', 'spec/support/factory_girl.rb'
           when 'devise'
