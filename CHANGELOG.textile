@@ -1,8 +1,9 @@
 h1. CHANGELOG
 
-h3. 0.3.11 unreleased
+h3. 0.3.11 September 12, 2014
 
 * accommodate RSpec 3.1 change to rails_helper.rb file (https://github.com/rspec/rspec-rails/issues/1106)
+* accommodate Devise Confirmable module (contributed by Walther Diechmann)
 
 h3. 0.3.10 August 20, 2014
 
