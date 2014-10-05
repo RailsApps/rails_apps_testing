@@ -1,5 +1,9 @@
 h1. CHANGELOG
 
+h3. 0.3.12 October 5, 2014
+
+* update for Devise 3.4 changed error messages
+
 h3. 0.3.11 September 12, 2014
 
 * accommodate RSpec 3.1 change to rails_helper.rb file (https://github.com/rspec/rspec-rails/issues/1106)
