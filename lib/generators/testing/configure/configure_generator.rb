@@ -24,7 +24,7 @@ module Testing
             gsub_file 'spec/rails_helper.rb', /config.use_transactional_fixtures = true/, "config.use_transactional_fixtures = false"
             gsub_file 'spec/rails_helper.rb', /# Dir/, "Dir"
             copy_file 'database_cleaner.rb', 'spec/support/database_cleaner.rb'
-            copy_file 'factory_girl.rb', 'spec/support/factory_girl.rb'
+            copy_file 'factory_bot.rb', 'spec/support/factory_bot.rb'
           when 'devise'
             copy_file 'spec/devise/support/devise.rb', 'spec/support/devise.rb'
             copy_file 'spec/devise/support/helpers/session_helpers.rb', 'spec/support/helpers/session_helpers.rb'
