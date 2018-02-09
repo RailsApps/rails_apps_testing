@@ -1,5 +1,9 @@
 h1. CHANGELOG
 
+h3. 0.3.13 February 9, 2018
+
+* FactoryGirl now named FactoryBot
+
 h3. 0.3.12 October 5, 2014
 
 * update for Devise 3.4 changed error messages

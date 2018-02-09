@@ -1,9 +1,9 @@
 describe UserPolicy do
   subject { UserPolicy }
 
-  let (:current_user) { FactoryGirl.build_stubbed :user }
-  let (:other_user) { FactoryGirl.build_stubbed :user }
-  let (:admin) { FactoryGirl.build_stubbed :user, :admin }
+  let (:current_user) { FactoryBot.build_stubbed :user }
+  let (:other_user) { FactoryBot.build_stubbed :user }
+  let (:admin) { FactoryBot.build_stubbed :user, :admin }
 
   permissions :index? do
     it "denies access if not an admin" do
